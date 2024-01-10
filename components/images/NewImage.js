@@ -5,27 +5,26 @@ import classes from './NewImage.module.css';
 
 function NewImage(props) {
   const titleInputRef = useRef();
-  const imageInputRef = useRef();
-  const addressInputRef = useRef();
+  const urlInputRef = useRef();
+  const imageIdInputRef = useRef();
   const descriptionInputRef = useRef();
 
   function submitHandler(event) {
     event.preventDefault();
 
     const enteredTitle = titleInputRef.current.value;
-    const enteredImage = imageInputRef.current.value;
-    const enteredAddress = addressInputRef.current.value;
+    const enteredUrl = urlInputRef.current.value;
+    const enteredImageId = imageIdInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
 
-    const meetupData = {
-      meetingId: enteredTitle,
+    const imageData = {
       title: enteredTitle,
-      image: enteredImage,
-      address: enteredAddress,
+      image: enteredUrl,
+      imageId: enteredImageId,
       description: enteredDescription,
     };
 
-    props.onAddMeetup(meetupData);
+    props.onAddImage(imageData);
   }
 
   return (
@@ -37,23 +36,18 @@ function NewImage(props) {
         </div>
         <div className={classes.control}>
           <label htmlFor='image'>Image URL</label>
-          <input type='url' required id='image' ref={imageInputRef} />
+          <input type='url' required id='image' ref={urlInputRef} />
+        </div>
+        <div className={classes.control}>
+          <label htmlFor='imageId'>Title </label>
+          <input type='imageId' required id='imageId' ref={titleInputRef} />
         </div>
         <div className={classes.control}>
           <label htmlFor='description'>Description</label>
-          <input type='text' required id='description' ref={addressInputRef} />
-        </div>
-        <div className={classes.control}>
-          <label htmlFor='description'>Description</label>
-          <textarea
-            id='description'
-            required
-            rows='5'
-            ref={descriptionInputRef}
-          ></textarea>
+          <input type='text' required id='description' ref={imageIdInputRef} />
         </div>
         <div className={classes.actions}>
-          <button>Add Meetup</button>
+          <button>Add Image</button>
         </div>
       </form>
     </Card>

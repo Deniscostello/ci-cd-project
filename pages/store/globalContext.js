@@ -16,15 +16,15 @@ export function GlobalContextProvider(props) {
     }, []);
 
     async function getAllImages() {
-        const response = await fetch('/api/get-meetings', {
+        const response = await fetch('/api/get-image', {
             method: 'POST',
-            body: JSON.stringify({ image: 'all' }),
+            body: JSON.stringify({ images: 'all' }),
             headers: {
                 'Content-Type': 'application/json'
             }
         });
         let data = await response.json();
-        setGlobals((previousGlobals) => { const newGlobals = JSON.parse(JSON.stringify(previousGlobals)); newGlobals.images = data.images; newGlobals.dataLoaded = true; return newGlobals })
+        setGlobals((previousGlobals) => { const newGlobals = JSON.parse(JSON.stringify(previousGlobals)); newGlobals.images = data.images; console.log(newGlobals.images); newGlobals.dataLoaded = true; return newGlobals })
     }
 
     async function editGlobalData(command) { 

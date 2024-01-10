@@ -10,8 +10,8 @@ export default function () {
     // Back to basics, a simple for loop. Also trim() comes into play as it usually does!
     let returnVal = null
     for (let ii = 0; ii < globalCtx.theGlobalObject.images.length; ii++) {
-        let temp = globalCtx.theGlobalObject.images[ii]
-        if (temp.imageId.trim() == router.query.imageId.trim()) {
+        let temp = globalCtx.theGlobalObject.images[ii];
+        if (temp.imageId == router.query.imageId) {
             returnVal = <ImageDetail image={temp.url} title={temp.title} description={temp.description} />
         }
     }

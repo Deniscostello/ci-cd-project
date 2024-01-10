@@ -7,10 +7,10 @@ function ImageList(props) {
       {props.images.map((image) => (
         <ImageItem
           key={image.imageId}
-          id={image.imageId}
+          imageId={image.imageId}
           image={image.url}
           title={image.title}
-          address={image.description}
+          description={image.description}
         />
       ))}
     </ul>

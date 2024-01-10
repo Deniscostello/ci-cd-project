@@ -6,7 +6,7 @@ function ImageItem(props) {
   const router = useRouter();
 
   function showDetailsHandler() {
-    router.push('/' + props.id);
+    router.push('/' + props.imageId);
   }
 
   return (
@@ -17,7 +17,6 @@ function ImageItem(props) {
         </div>
         <div className={classes.content}>
           <h3>{props.title}</h3>
-          <address>{props.address}</address>
         </div>
         <div className={classes.actions}>
           <button onClick={showDetailsHandler}>Show Details</button>
