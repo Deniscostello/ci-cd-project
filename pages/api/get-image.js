@@ -1,5 +1,5 @@
 async function handler(req, res) { // can be called anything you like
-  const response = await fetch('http://localhost:8080/getAllImages', {
+  const response = await fetch('http://springboot-imageservice:8080/getAllImages', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
