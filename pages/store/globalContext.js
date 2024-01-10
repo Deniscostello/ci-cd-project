@@ -17,8 +17,7 @@ export function GlobalContextProvider(props) {
 
     async function getAllImages() {
         const response = await fetch('/api/get-image', {
-            method: 'POST',
-            body: JSON.stringify({ images: 'all' }),
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             }

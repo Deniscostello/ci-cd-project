@@ -19,7 +19,7 @@ function NewImage(props) {
 
     const imageData = {
       title: enteredTitle,
-      image: enteredUrl,
+      url: enteredUrl,
       imageId: enteredImageId,
       description: enteredDescription,
     };
@@ -35,17 +35,18 @@ function NewImage(props) {
           <input type='text' required id='title' ref={titleInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor='image'>Image URL</label>
-          <input type='url' required id='image' ref={urlInputRef} />
+          <label htmlFor='url'>Image URL</label>
+          <input type='url' required id='url' ref={urlInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor='imageId'>Title </label>
-          <input type='imageId' required id='imageId' ref={titleInputRef} />
+          <label htmlFor='imageId'>Image id </label>
+          <input type='text' required id='imageId' ref={imageIdInputRef} />
         </div>
         <div className={classes.control}>
           <label htmlFor='description'>Description</label>
-          <input type='text' required id='description' ref={imageIdInputRef} />
+          <input type='text' required id='description' ref={descriptionInputRef} />
         </div>
+        
         <div className={classes.actions}>
           <button>Add Image</button>
         </div>
